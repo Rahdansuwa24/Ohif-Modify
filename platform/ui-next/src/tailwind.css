@@ -8,6 +8,105 @@
 
 @layer base {
   :root {
+    --highlight: 174 100% 40%;          /* dari primary lebih terang */
+    --neutral: 217 20% 60%;
+    --neutral-light: 217 20% 75%;
+    --neutral-dark: 217 20% 25%;
+
+    --background: 224 60% 5%;           /* #020618 */
+    --foreground: 0 0% 98%;
+
+    --card: 222 47% 11%;                /* #0F172B */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 223 41% 14%;             /* #151F34 */
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 174 100% 29%;            /* #009689 */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 220 35% 18%;           /* #1D293D */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 217 28% 27%;               /* #314158 */
+    --muted-foreground: 200 20% 70%;
+
+    --accent: 174 100% 29%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;       /* biarin default (error color bagus) */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 217 28% 20%;
+    --input: 217 28% 20%;
+    --ring: 174 100% 29%;
+
+    /* Chart (biar nyambung sama tema) */
+    --chart-1: 174 100% 29%;
+    --chart-2: 200 80% 50%;
+    --chart-3: 40 90% 55%;
+    --chart-4: 280 60% 60%;
+    --chart-5: 340 70% 55%;
+
+    --radius: 0.5rem;
+
+    /* STATUS (TIDAK DIUBAH AGAR AMAN & KONTRAS) */
+    --success-bg: hsl(143, 85%, 96%);
+    --success-border: hsl(145, 92%, 91%);
+    --success-text: hsl(140, 100%, 27%);
+
+    --info-bg: hsl(208, 100%, 97%);
+    --info-border: hsl(221, 91%, 91%);
+    --info-text: hsl(210, 92%, 45%);
+
+    --warning-bg: hsl(49, 100%, 97%);
+    --warning-border: hsl(49, 91%, 91%);
+    --warning-text: hsl(31, 92%, 45%);
+
+    --error-bg: hsl(359, 100%, 97%);
+    --error-border: hsl(359, 100%, 94%);
+    --error-text: hsl(360, 100%, 45%);
+  }
+
+  .dark {
+    --background: 224 60% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 223 41% 14%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 174 100% 29%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 220 35% 18%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 217 28% 27%;
+    --muted-foreground: 200 20% 70%;
+
+    --accent: 174 100% 29%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 217 28% 20%;
+    --input: 217 28% 20%;
+    --ring: 174 100% 29%;
+
+    --chart-1: 174 100% 29%;
+    --chart-2: 200 80% 50%;
+    --chart-3: 40 90% 55%;
+    --chart-4: 280 60% 60%;
+    --chart-5: 340 70% 55%;
+  }
+}
+
+/* @layer base {
+  :root {
     --highlight: 191 74% 63%;
     --neutral: 213 22% 59%;
     --neutral-light: 214 69% 81%;
@@ -80,7 +179,7 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-}
+} */
 
 /* ORIGINAL THEME for comparison and testing
 

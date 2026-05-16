@@ -168,9 +168,9 @@ function WorkList({
 
   // Set body style
   useEffect(() => {
-    document.body.classList.add('bg-black');
+    document.body.classList.add('bg-background');
     return () => {
-      document.body.classList.remove('bg-black');
+      document.body.classList.remove('bg-background');
     };
   }, []);
 
@@ -437,7 +437,7 @@ function WorkList({
                     {/* TODO revisit the completely rounded style of buttons used for launching a mode from the worklist later */}
                     <Button
                       type={ButtonEnums.type.primary}
-                      size={ButtonEnums.size.smallTall}
+                      size={ButtonEnums.size.small}
                       disabled={!isValidMode}
                       startIconTooltip={
                         !isValidMode ? (
@@ -455,7 +455,7 @@ function WorkList({
                       }
                       onClick={() => {}}
                       dataCY={`mode-${mode.routeName}-${studyInstanceUid}`}
-                      className={!isValidMode && 'bg-[#222d44]'}
+                      className={!isValidMode ? 'bg-[#222d44]' : ''}
                     >
                       {mode.displayName}
                     </Button>
@@ -552,7 +552,7 @@ function WorkList({
   );
 
   return (
-    <div className="flex h-screen flex-col bg-black">
+    <div className="bg-background flex h-screen flex-col">
       <Header
         isSticky
         menuOptions={menuOptions}
@@ -600,7 +600,7 @@ function WorkList({
           ) : (
             <div className="flex flex-col items-center justify-center pt-48">
               {appConfig.showLoadingIndicator && isLoadingData ? (
-                <LoadingIndicatorProgress className={'h-full w-full bg-black'} />
+                <LoadingIndicatorProgress className={'bg-background h-full w-full'} />
               ) : (
                 <EmptyStudies />
               )}
