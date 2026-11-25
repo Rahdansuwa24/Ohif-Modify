@@ -3,10 +3,15 @@
 window.config = function () {
   return {
     name: 'config/default.js',
-    routerBasename: null,
+    routerBasename: '/ohif/',
     // whiteLabeling: {},
-    extensions: ['@ohif/extension-default', '@ohif/extension-cornerstone'],
-    modes: ['@ohif/mode-longitudinal'],
+    extensions: [
+      '@ohif/extension-default',
+      '@ohif/extension-cornerstone',
+      '@ohif/extension-dicom-video',
+      '@ohif/extension-dicom-pdf',
+    ],
+    modes: ['@ohif/mode-basic'],
     customizationService: {},
     showStudyList: true,
     // some windows systems have issues with more than 3 web workers
@@ -218,9 +223,9 @@ window.config = function () {
         configuration: {
           friendlyName: 'local Orthanc DICOMWeb Server',
           name: 'DCM4CHEE',
-          wadoUriRoot: 'http://localhost/pacs/dicom-web',
-          qidoRoot: 'http://localhost/pacs/dicom-web',
-          wadoRoot: 'http://localhost/pacs/dicom-web',
+          wadoUriRoot: '/dicom-web',
+          qidoRoot: '/dicom-web',
+          wadoRoot: '/dicom-web',
           qidoSupportsIncludeField: true,
           supportsReject: true,
           dicomUploadEnabled: true,
@@ -230,9 +235,11 @@ window.config = function () {
           supportsFuzzyMatching: true,
           supportsWildcard: true,
           omitQuotationForMultipartRequest: true,
-          singlepart: 'bulkdata,video',
+          singlepart: 'bulkdata,video,pdf',
           bulkDataURI: {
             enabled: true,
+            relativeResolution: 'studies',
+            transform: url => url.replace('http://localhost', ''),
             // This is an example config that can be used to fix the retrieve URL
             // where it has the wrong prefix (eg a canned prefix).  It is better to
             // just use the correct prefix out of the box, but that is sometimes hard
@@ -316,7 +323,7 @@ window.config = function () {
           [
             React.createElement('img', {
               key: 'logo',
-              src: '/logo-app/vismed-logo.png',
+              src: '/ohif/logo-app/vismed-logo.png',
               className: 'h-8',
             }),
             React.createElement(
